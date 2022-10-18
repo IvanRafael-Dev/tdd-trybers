@@ -1,0 +1,32 @@
+{
+  "name": "tdd-trybers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:integration": "mocha src/tests/integration/**/*.test.ts --config ./.mocharc.json --watch --exit",
+    "dev": "tsnd src/api/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/chai-http": "^4.2.0",
+    "@types/express": "^4.17.14",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.0",
+    "@types/sinon": "^10.0.13",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "express-async-errors": "^3.1.1",
+    "mocha": "^10.1.0",
+    "sinon": "^14.0.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
