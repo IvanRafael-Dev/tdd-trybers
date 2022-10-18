@@ -40,4 +40,14 @@ describe('POST /users', () => {
       expect(httpResponse.body).to.deep.equal({ error: 'O campo "password" é obrigatório' })
     })
   })
+
+  describe('quando a requisição é feita com sucesso', () => {
+    it('deve retornar um status 201', async () => {
+      const httpResponse = await chai
+        .request(app)
+        .post('/users')
+        .send({ email: 'any_email@mail.com', username: 'tryber', password: '123456' })
+      expect(httpResponse.status).to.equal(201)
+    })
+  })
 })
