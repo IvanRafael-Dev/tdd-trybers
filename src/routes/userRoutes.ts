@@ -1,11 +1,13 @@
 import { Router } from 'express'
-import { UserController } from '../controllers/userController'
+import { UserController } from '../controllers/UserControllers'
+import { UserServices } from '../services/UserServices'
 
-const userController = new UserController()
+const userServices = new UserServices()
+const userControllers = new UserController(userServices)
 
 const router = Router()
 
 router
-  .post('/users', (req, res) => userController.create(req, res))
+  .post('/users', (req, res) => userControllers.create(req, res))
 
 export { router as userRouter }
