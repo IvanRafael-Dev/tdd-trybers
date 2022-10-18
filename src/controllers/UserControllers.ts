@@ -9,10 +9,6 @@ export class UserController {
   }
 
   async create (request: Request, response: Response): Promise<Response | any> {
-    try {
-      this.userService.validateNewUser(request.body)
-    } catch (error: any) {
-      return response.status(error.status).json({ error: error.message })
-    }
+    this.userService.validateNewUser(request.body)
   }
 }
