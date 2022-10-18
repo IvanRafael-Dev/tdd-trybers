@@ -5,5 +5,5 @@ export interface IUser {
 }
 
 export interface IUserService {
-  validateNewUser (user: IUser): Error | any
+  validateNewUser (user: IUser): Error | void
 }
