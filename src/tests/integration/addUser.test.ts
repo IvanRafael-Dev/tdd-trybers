@@ -30,7 +30,7 @@ describe('POST /users', () => {
     })
   })
 
-  describe('quando o campo "username" não é informado', () => {
+  describe('quando o campo "password" não é informado', () => {
     it('deve retornar um status 400', async () => {
       const httpResponse = await chai
         .request(app)
@@ -38,6 +38,16 @@ describe('POST /users', () => {
         .send({ email: 'any_email@mail.com', username: 'tryber' })
       expect(httpResponse.status).to.equal(400)
       expect(httpResponse.body).to.deep.equal({ error: 'O campo "password" é obrigatório' })
+    })
+  })
+
+  describe('quando a requisição é feita com sucesso', () => {
+    it('deve retornar um status 201', async () => {
+      const httpResponse = await chai
+        .request(app)
+        .post('/users')
+        .send({ email: 'any_email@mail.com', username: 'tryber', password: '123456' })
+      expect(httpResponse.status).to.equal(201)
     })
   })
 })
