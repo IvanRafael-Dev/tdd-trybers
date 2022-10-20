@@ -131,4 +131,5 @@ export default new Sequelize(config)
   - "db:reset": "npx -y tsc && npx sequelize db:drop && npx sequelize db:create"
 
 - create migration
+
 - create Model
